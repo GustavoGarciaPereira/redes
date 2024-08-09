@@ -16,7 +16,7 @@
 
 import ipaddress
 
-def calcular_rede_e_broadcast(ip_cidr):
+def calcular_rede_broadcast_e_utilizaveis(ip_cidr):
     # Cria um objeto IPv4Network a partir do IP/CIDR fornecido
     rede = ipaddress.ip_network(ip_cidr, strict=False)
     
@@ -24,7 +24,11 @@ def calcular_rede_e_broadcast(ip_cidr):
     endereco_rede = rede.network_address
     endereco_broadcast = rede.broadcast_address
     
-    return endereco_rede, endereco_broadcast
+    # Calcula os endereços utilizáveis entre a rede e o broadcast
+    enderecos_utilizaveis = list(rede.hosts())
+    quantidade_enderecos = len(enderecos_utilizaveis)
+    
+    return endereco_rede, endereco_broadcast, enderecos_utilizaveis, quantidade_enderecos
 
 # Testes
 ips = [
@@ -39,7 +43,11 @@ ips = [
 ]
 
 for ip in ips:
-    rede, broadcast = calcular_rede_e_broadcast(ip)
+    rede, broadcast, utilizaveis, qtd_utilizaveis = calcular_rede_broadcast_e_utilizaveis(ip)
     print(f"IP: {ip}")
     print(f"Rede: {rede}")
-    print(f"Broadcast: {broadcast}\n")
+    print(f"Broadcast: {broadcast}")
+    print(f"Endereços utilizáveis: {utilizaveis}")
+    print(f"Quantidade de endereços utilizáveis: {qtd_utilizaveis}\n")
+
+
