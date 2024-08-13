@@ -1,6 +1,3 @@
-Aqui está um exemplo de README para o seu projeto FastAPI, que inclui as rotas `/calcular_rede/` e `/verificar_vizinhanca/`:
-
-
 # Rede IP e Vizinhança API
 
 Este projeto é uma API desenvolvida com FastAPI para calcular detalhes de rede para endereços IP fornecidos e verificar se dois endereços IP estão na mesma sub-rede.
