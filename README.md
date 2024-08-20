@@ -9,6 +9,7 @@ Este projeto é uma API desenvolvida com FastAPI para calcular detalhes de rede 
 
 ## Tecnologias Utilizadas
 
+
 - **FastAPI**: Framework moderno e rápido (baseado em Starlette e Pydantic) para construção de APIs com Python 3.7+.
 - **Python 3.7+**: Linguagem de programação utilizada.
 - **ipaddress**: Biblioteca padrão do Python para manipulação de redes e IPs.
